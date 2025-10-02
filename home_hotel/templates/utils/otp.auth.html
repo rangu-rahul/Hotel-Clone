@@ -1,0 +1,21 @@
+{% extends "utils/base.html" %}
+{% block start %}
+<div class="container my-5 pt-5 pb-5">
+    <div class="col-6 mx-auto card shadow border-0 p-4">
+        <form method="POST">
+            {% csrf_token %}
+            <h3 class="mb-4 text-center">Login</h3>
+
+            
+
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">OTP</label>
+                <input type="text" name="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            
+
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
