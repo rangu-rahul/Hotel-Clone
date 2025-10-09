@@ -1,0 +1,31 @@
+{% extends "utils/base.html" %} {% block start %}
+
+<div class="container mt-5 pt-5 pb-5">
+  <div class="col-6 mx-auto card shadow p-4" style="border: none">
+    <h2>VENDOR OTP VERIFICATION</h2>
+    <p>Please enter the OTP sent to {{ email }}</p>
+    <form method="POST">
+      {% include "utils/alerts.html" %} {% csrf_token %}
+
+      <div class="mb-3">
+        <label for="otpInput" class="form-label">OTP</label>
+        <input
+          type="text"
+          name="otp"
+          class="form-control"
+          id="otpInput"
+          placeholder="Enter 4-digit OTP"
+          maxlength="4"
+          required
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary">Verify OTP</button>
+      <a href="/accounts/login-vendor/" class="btn btn-secondary"
+        >Back to Login</a
+      >
+    </form>
+  </div>
+</div>
+
+{% endblock %}
